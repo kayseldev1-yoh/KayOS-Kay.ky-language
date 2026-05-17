@@ -1,0 +1,6 @@
+name = "kayos-api"
+main = "server.js"
+compatibility_date = "2025-05-17"
+
+[vars]
+# Variabel environment di sini
