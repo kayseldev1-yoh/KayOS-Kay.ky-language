@@ -1,0 +1,12 @@
+[
+  {
+    "title": "KayOS 2026.1 Release",
+    "date": "2026-03-24",
+    "summary": "2026 Theme Refresh, BackTrack Mode, and 8 new tools."
+  },
+  {
+    "title": "LLM Integration (Offline)",
+    "date": "2026-03-10",
+    "summary": "Running local LLMs with Ollama directly on KayOS."
+  }
+]

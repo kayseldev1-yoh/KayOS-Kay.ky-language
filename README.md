@@ -16,7 +16,13 @@ KayOS is a high-performance, security-focused operating system. It features:
 - **Custom Shell**: A lightweight, native shell (`KayOS Shell`) built directly on top of the Kay.ky VM.
 - **Desktop Environment**: Minimalist-modern interface based on the `i3` window manager.
 
-## Getting Started
-1. **Clone**: `git clone https://github.com/yourusername/Kay.ky`
-2. **Build**: `cargo build --release`
-3. **Run**: `./target/release/kayky` (starts KayOS Shell).
+## Supported Platforms
+- **ARM**: Cheap & low-powered devices, great for leave-behind.
+- **Bare Metal**: Single or multiple boot for complete hardware control.
+- **Cloud**: Pre-installed images for major hosting providers.
+- **Containers**: Quick access via Docker/LXD.
+- **Mobile**: Android penetration testing suite.
+- **Live USB**: KayOS in your pocket, non-persistent or persistent boot.
+- **Virtual Machines**: Pre-built images for VMware, VirtualBox, QEMU & Vagrant.
+- **WSL**: Integrated experience on modern Windows.
+
