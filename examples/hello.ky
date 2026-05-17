@@ -1,0 +1,21 @@
+# Kay.ky Example script
+
+define greet(name):
+    say "Hello, " + name
+    say "Welcome to the future of coding."
+
+x as 10
+y as 20
+
+if x < y:
+    greet("Kay")
+    say "X is smaller than Y"
+else:
+    say "Y is smaller or equal to X"
+
+counter as 0
+while counter < 3:
+    say "Counting: " + counter
+    counter as counter + 1
+
+say "Done!"

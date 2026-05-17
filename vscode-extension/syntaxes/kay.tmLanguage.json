@@ -1,0 +1,52 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Kay.ky",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#numbers"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.control.ky",
+                "match": "\\b(if|else|while|for|in|return|import|as)\\b"
+            }, {
+                "name": "keyword.other.ky",
+                "match": "\\b(say|define)\\b"
+            }, {
+                "name": "constant.language.ky",
+                "match": "\\b(true|false|null)\\b"
+            }]
+        },
+        "strings": {
+            "name": "string.quoted.double.ky",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.ky",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "comments": {
+            "name": "comment.line.number-sign.ky",
+            "match": "#.*$"
+        },
+        "numbers": {
+            "name": "constant.numeric.ky",
+            "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+        }
+    },
+    "scopeName": "source.ky"
+}

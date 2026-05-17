@@ -1,0 +1,6 @@
+# KayOS Boot Script
+say "--- KayOS System Initializing ---"
+say "Loading Security Modules..."
+// Jalankan AI Updater
+import "ai/update_engine.ky"
+say "System Ready."

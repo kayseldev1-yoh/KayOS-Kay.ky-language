@@ -1,0 +1,36 @@
+{
+    "name": "Kay.ky",
+    "displayName": "Kay.ky Language Support",
+    "description": "Syntax highlighting and language support for Kay.ky",
+    "version": "0.1.0",
+    "publisher": "kay-ecosystem",
+    "icon": "icon.svg",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "kayky",
+                "aliases": [
+                    "Kay.ky",
+                    "kay"
+                ],
+                "extensions": [
+                    ".ky"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "kayky",
+                "scopeName": "source.ky",
+                "path": "./syntaxes/kay.tmLanguage.json"
+            }
+        ]
+    }
+}

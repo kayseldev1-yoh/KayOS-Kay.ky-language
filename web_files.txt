@@ -1,0 +1,97 @@
+=== public/css/docs.css ===
+:root { --border: #1e1e2e; }
+.sidebar { border-right: 1px solid var(--border); }
+.code-block { background: #13131f; border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; position: relative; }
+.callout-tip { background: #1e293b; border-left: 4px solid #3b82f6; padding: 1rem; }
+.active { color: var(--accent-cyan); border-right: 2px solid var(--accent-cyan); }
+
+=== public/css/download.css ===
+.download-card { border: 1px solid var(--border); padding: 2rem; transition: 0.3s; }
+.download-card:hover { border-color: var(--accent-cyan); transform: translateY(-10px); }
+.counter-box { font-size: 3rem; color: var(--accent-cyan); font-weight: bold; }
+
+=== public/js/docs.js ===
+document.addEventListener('DOMContentLoaded', () => {
+    // Scroll spy logic
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.sidebar a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 60) current = section.getAttribute('id');
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) link.classList.add('active');
+        });
+    });
+});
+
+=== public/js/download.js ===
+async function updateCounter() {
+    const res = await fetch('/api/downloads');
+    const data = await res.json();
+    document.getElementById('total-downloads').innerText = data.total.toLocaleString();
+}
+
+async function registerDownload(platform) {
+    await fetch(`/api/downloads/${platform}`, { method: 'POST' });
+    updateCounter();
+}
+
+// Detect OS
+const userAgent = navigator.userAgent;
+if (userAgent.indexOf("Win") != -1) document.getElementById('win-btn').classList.add('ring-2', 'ring-cyan-500');
+else if (userAgent.indexOf("Mac") != -1) document.getElementById('mac-btn').classList.add('ring-2', 'ring-cyan-500');
+else document.getElementById('linux-btn').classList.add('ring-2', 'ring-cyan-500');
+
+setInterval(updateCounter, 30000);
+updateCounter();
+
+=== views/docs.html ===
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/docs.css"></head>
+<body class="flex">
+    <aside class="sidebar w-64 h-screen sticky top-0 p-6">
+        <h2 class="font-bold mb-4">Navigation</h2>
+        <nav class="space-y-2">
+            <a href="#installation" class="block">Installation</a>
+            <a href="#types" class="block">Data Types</a>
+            <a href="#flow" class="block">Control Flow</a>
+        </nav>
+    </aside>
+    <main class="p-10 flex-1">
+        <section id="installation">
+            <h2 class="text-3xl font-bold">Installation</h2>
+            <div class="code-block"><code>cargo build --release</code></div>
+        </section>
+    </main>
+</body>
+</html>
+
+=== views/download.html ===
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/download.css"></head>
+<body class="p-10">
+    <h1 class="text-4xl font-bold text-center">Downloads</h1>
+    <div id="total-downloads" class="counter-box text-center">0</div>
+    <div class="grid grid-cols-3 gap-6 mt-10">
+        <div class="download-card" id="linux-btn">
+            <h2 class="text-2xl">Linux</h2>
+            <button onclick="registerDownload('linux')" class="btn-primary mt-4">Download .tar.gz</button>
+        </div>
+        <div class="download-card" id="win-btn">
+            <h2 class="text-2xl">Windows</h2>
+            <button onclick="registerDownload('windows')" class="btn-primary mt-4">Download .exe</button>
+        </div>
+        <div class="download-card" id="mac-btn">
+            <h2 class="text-2xl">macOS</h2>
+            <button onclick="registerDownload('macos')" class="btn-primary mt-4">Download .dmg</button>
+        </div>
+    </div>
+    <script src="js/download.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+[package]
+name = "kayky"
+version = "0.1.0"
+edition = "2021"
+authors = ["Kay.ky Team"]
+description = "Kay.ky - Next-generation programming language"
+license = "MIT"
+
+[dependencies]
+rustyline = "11"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+tracing-appender = "0.2"
+anyhow = "1.0"
+tokio = { version = "1", features = ["full"] }
+reqwest = "0.11"
+directories = "5"
+libloading = "0.8"
+
+[lib]
+name = "kayky"
+path = "src/lib.rs"
+
+[[bin]]
+name = "kayky"
+path = "src/main.rs"
+
+[[bin]]
+name = "kayrepl"
+path = "src/repl.rs"
+
+[[bin]]
+name = "kaypkg"
+path = "src/package_manager/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

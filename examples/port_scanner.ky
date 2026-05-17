@@ -1,0 +1,9 @@
+// Port Scanner sederhana menggunakan FFI (socket)
+// Contoh kode Kay.ky untuk melakukan pemindaian
+// Perlu instruksi FFI untuk socket, connect, close
+
+define scan(host, port):
+    say "Scanning " + host + ":" + port
+    // Panggilan FFI ke libc untuk membuat socket
+    // dan melakukan koneksi
+    say "Open"

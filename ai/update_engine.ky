@@ -1,0 +1,11 @@
+#!/usr/bin/env kayky
+import "std/sys"
+import "std/net"
+
+def check_for_updates():
+    say "Checking for Kay.ky updates..."
+    # Contoh penggunaan stdlib baru
+    say "OS Platform: " + sys.platform()
+    say "Update check complete."
+  
+check_for_updates()
