@@ -1,0 +1,10 @@
+/home/kaysel/Kay.ky/target/debug/deps/tracing_appender-f040b59321970e2b.d: /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/lib.rs /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/non_blocking.rs /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/rolling.rs /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/rolling/builder.rs /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/worker.rs /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/sync.rs
+
+/home/kaysel/Kay.ky/target/debug/deps/libtracing_appender-f040b59321970e2b.rmeta: /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/lib.rs /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/non_blocking.rs /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/rolling.rs /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/rolling/builder.rs /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/worker.rs /home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/sync.rs
+
+/home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/lib.rs:
+/home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/non_blocking.rs:
+/home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/rolling.rs:
+/home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/rolling/builder.rs:
+/home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/worker.rs:
+/home/kaysel/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tracing-appender-0.2.5/src/sync.rs:

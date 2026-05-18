@@ -1,5 +1,6 @@
 //! Kay.ky Runtime - Tree-walk Interpreter
 
+pub mod builtins;
 use std::collections::HashMap;
 use std::rc::Rc;
 use std::cell::RefCell;
@@ -80,11 +81,8 @@ impl Interpreter {
     pub fn new() -> Self {
         let globals = Rc::new(RefCell::new(Environment::new()));
         
-        // Native functions
-        globals.borrow_mut().define("time".into(), Value::NativeFunction(|_| {
-            let now = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap();
-            Value::Number(now.as_secs_f64())
-        }));
+        // Register Built-ins
+        crate::runtime::builtins::register_globals(&mut globals.borrow_mut());
 
         Self {
             globals: globals.clone(),

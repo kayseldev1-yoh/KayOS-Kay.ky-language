@@ -16,7 +16,7 @@ tracing-subscriber = "0.3"
 tracing-appender = "0.2"
 anyhow = "1.0"
 tokio = { version = "1", features = ["full"] }
-reqwest = "0.11"
+reqwest = { version = "0.11", features = ["blocking", "json"] }
 directories = "5"
 libloading = "0.8"
 
